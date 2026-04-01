@@ -3,7 +3,6 @@ This is a .NET project developed as part of the semester coursework. This projec
 efficiently. It allows users to add, update, and delete student information, track academic performance, and generate reports. The system provides a user-friendly
 interface for administrators to manage students, courses, and enrollments in an organized manner.
 
-# Project Structure
 ## Project Structure
 
 - **Semester Project/**  
