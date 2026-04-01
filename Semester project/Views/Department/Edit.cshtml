@@ -1,0 +1,24 @@
+﻿@model Semester_project.Models.Department
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    .btn{
+        margin-top:20px;
+    }
+</style>
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.DepartmentId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DepartmentName)
+        @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+}

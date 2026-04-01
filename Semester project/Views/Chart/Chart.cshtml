@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Database Summary</h2>
+
+<canvas id="summaryChart" width="600" height="300"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+    fetch('@Url.Action("GetChartData", "Chart")')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.map(item => item.Label);
+            const counts = data.map(item => item.Count);
+
+            const ctx = document.getElementById('summaryChart').getContext('2d');
+
+            new Chart(ctx, {
+                type: 'pie', 
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Records per Table',
+                        data: counts,
+                        backgroundColor: [
+                            '#007bff',
+                            '#28a745',
+                            '#ffc107',
+                            '#17a2b8',
+                            '#dc3545'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+        });
+</script>
+

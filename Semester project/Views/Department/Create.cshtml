@@ -1,0 +1,26 @@
+﻿@model Semester_project.Models.Department
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add new Department</h2>
+
+<style>
+    .btn {
+        margin-top: 20px;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepartmentName)
+            @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control" })
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </div>
+}

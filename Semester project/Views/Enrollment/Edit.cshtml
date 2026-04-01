@@ -1,0 +1,29 @@
+﻿@model Semester_project.Models.Enrollment
+@{
+    ViewBag.Title = "Edit";
+
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.EnrollmentId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentId, "Student")
+        @Html.DropDownListFor(model => model.StudentId, (SelectList)ViewBag.StudentId, "Select Student", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CourseId, "Course")
+        @Html.DropDownListFor(model => model.CourseId, (SelectList)ViewBag.CourseId, "Select Course", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EnrollmentDate)
+        @Html.TextBox("EnrollmentDate", Model.EnrollmentDate?.ToString("yyyy-MM-dd"), new { @class = "form-control", @type = "date" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+}
+
