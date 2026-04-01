@@ -4,6 +4,6 @@ efficiently. It allows users to add, update, and delete student information, tra
 interface for administrators to manage students, courses, and enrollments in an organized manner.
 
 # Project Structure
-Semester Project/ → Main project files
-.vs/ → Visual Studio settings (excluded from repository)
-packages/ → NuGet packages (excluded from repository)
+**Semester Project/ → Main project files**
+**.vs/ → Visual Studio settings (excluded from repository)**
+**packages/ → NuGet packages (excluded from repository)**
